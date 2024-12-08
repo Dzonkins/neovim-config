@@ -16,4 +16,4 @@ end
 vim.g.mapleader = " "
 
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup("nikola.lazy")
+require("lazy").setup({ spec = "nikola.lazy", change_detection = { notify = false } })

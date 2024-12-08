@@ -8,7 +8,6 @@ return {
         -- REQUIRED
         harpoon:setup()
         -- REQUIRED
-
         -- Keymap to add a file to Harpoon
         vim.keymap.set("n", "<leader>a", function()
             harpoon:list():add()
