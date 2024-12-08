@@ -32,6 +32,15 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "rust_analyzer",
+                "clangd",
+                "bashls",
+                "cssls",
+                "html",
+                "gopls",
+                "ts_ls",
+                "pyright",
+                "sqls",
+                "cmake",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -69,14 +78,14 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-                ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+                ['<S-Tab>'] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
               sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
             }, {
-                { name = 'buffer' },
+                { name = 'buffer',  max_item_count = vim.api.nvim_get_option("pumheight")},
             }),
             experimental = {
                 ghost_text = true,
