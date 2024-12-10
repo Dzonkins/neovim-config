@@ -1,4 +1,5 @@
 Prerequisite:  
+    install github CLI  
     install node(node source)  
     install go(official site)  
     sudo apt install ripgrep  
